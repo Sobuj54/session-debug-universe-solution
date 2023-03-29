@@ -53,9 +53,14 @@ range.addEventListener("input", () => {
   displayRoomsData(filteredData);
 });
 
+// sorting by price
 document.getElementById("sort-by-price-btn").addEventListener("click", () => {
   allRooms.sort((a, b) => {
-    return parseFloat(a.price) < parseFloat(b.price) ? 1 : -1;
+    console.log(a.price.$numberDecimal, b.price.$numberDecimal);
+    return parseFloat(a.price.$numberDecimal) >
+      parseFloat(b.price.$numberDecimal)
+      ? 1
+      : -1;
   });
   // console.log(allRooms)
   displayRoomsData(allRooms);
