@@ -12,6 +12,7 @@ fetchRoomsData();
 const displayRoomsData = async (rooms) => {
   const roomsContainer = document.getElementById("rooms-container");
   roomsContainer.innerHTML = "";
+  console.log(rooms);
   rooms.forEach((room) => {
     const {
       name,
@@ -25,7 +26,7 @@ const displayRoomsData = async (rooms) => {
     roomsContainer.innerHTML += `
  <div class="col">
  <div class="card h-100">
-   <img src=${images.picture_Url} class="card-img-top " alt="..." style=" height: 300px;
+   <img src=${images.picture_url} class="card-img-top " alt="..." style=" height: 300px;
    object-fit: fill;">
    <div class="card-body">
      <h5 class="card-title">${name}</h5>
