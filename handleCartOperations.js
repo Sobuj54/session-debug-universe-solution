@@ -12,6 +12,11 @@ const addToCart = async (id) => {
   } = result.find((item) => item._id == id);
   const cartItems = getItemsFromStorage();
 
+  console.log(cartItems);
+  if (cartItems.find((item) => item._id == id)) {
+    return;
+  }
+
   cartItems.push({
     name,
     summary,
